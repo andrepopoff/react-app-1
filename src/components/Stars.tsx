@@ -8,8 +8,10 @@ export default function Stars({ count = 0 }: ComponentProps) {
   return (
     <>
       {count && (
-        <ul className="card-body-stars u-clearfix">
-          {new Array(count).fill(<Star />)}
+        <ul className="card-body-stars">
+          {Array.from({ length: count }, (_, index) => (
+              <Star key={index} />
+          ))}
         </ul>
       )}
     </>
